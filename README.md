@@ -1,7 +1,7 @@
 # Github-Blog-CMS
 Github Blog CMS is a static portfolio geneartor to make a showcase of your projects!
 
-Live website: ![https://abhiprojectz.github.io/Github-Blog-CMS/](https://abhiprojectz.github.io/Github-Blog-CMS/)
+Live website: [https://abhiprojectz.github.io/Github-Blog-CMS/](https://abhiprojectz.github.io/Github-Blog-CMS/)
 
 
 ## Welcome to github blog cms !
@@ -15,6 +15,15 @@ Create your own coding or fortfolio or showcase blog on github for free!
 3.Markdown support
 4.Easy to deploy
 5.Have a nice , fresh ,super fast blog 
+
+# Preview 
+
+![](https://raw.githubusercontent.com/abhiprojectz/Github-Blog-CMS/master/Screenshot_2020-05-12_201008-1.jpg)
+
+
+and
+
+![](https://raw.githubusercontent.com/abhiprojectz/Github-Blog-CMS/master/Screenshot_2020-05-12_201039-1.jpg)
 
 # Getting started
 
@@ -31,5 +40,9 @@ Create your own coding or fortfolio or showcase blog on github for free!
 
 Create a coding or personal blog using markdown 
 
-# Examples 
+# How it works?
+
+This uses github api and fetch feature api!
+
+Combining both makes it possible.
 
