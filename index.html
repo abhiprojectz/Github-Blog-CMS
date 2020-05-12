@@ -1,0 +1,451 @@
+<!-- Markdown support!-->
+
+<!-- Github Static Blog generator -->
+
+<!-- Created by abhi!-->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Github Blog CMS</title>
+
+        
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+         <meta name="viewport" content="width=device-width, initial-scale=1"> <script src="https://kit.fontawesome.com/97cc306c60.js" crossorigin="anonymous"></script>
+
+   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+   <script src="config.js"></script>
+
+<link rel="stylesheet" href="style.css"></link>
+
+    </head>
+
+    <body>
+
+    
+
+    
+
+    <div id="loader">
+
+         <div id="space">
+
+            <p style="color:#fff;text-align:center;font-family:Passion one;font-size:25px;">Blog Loading .... </p><br />   
+
+         </div>
+
+         <!--     Loader svg      -->
+
+         <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+
+            <g fill="none" fill-rule="evenodd" stroke-width="2">
+
+               <circle cx="22" cy="22" r="19.4407">
+
+                  <animate attributeName="r" begin="0s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"></animate>
+
+                  <animate attributeName="stroke-opacity" begin="0s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"></animate>
+
+               </circle>
+
+               <circle cx="22" cy="22" r="11.526">
+
+                  <animate attributeName="r" begin="-0.9s" dur="1.8s" values="1; 20" calcMode="spline" keyTimes="0; 1" keySplines="0.165, 0.84, 0.44, 1" repeatCount="indefinite"></animate>
+
+                  <animate attributeName="stroke-opacity" begin="-0.9s" dur="1.8s" values="1; 0" calcMode="spline" keyTimes="0; 1" keySplines="0.3, 0.61, 0.355, 1" repeatCount="indefinite"></animate>
+
+               </circle>
+
+            </g>
+
+         </svg>
+
+      </div>
+
+      
+
+      
+
+      <!--      Main project starts     -->
+
+      
+
+      
+
+      <div id="super"/>
+
+        <div id="menuu">
+
+    <h1><svg id="bback" fill="#fff" width="30" height="30" viewBox="0 0 24 24"> <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /> </svg> Menu</h1>
+
+        <ul>
+
+            <li><svg fill="#fff" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.59,13.41C11,13.8 11,14.44 10.59,14.83C10.2,15.22 9.56,15.22 9.17,14.83C7.22,12.88 7.22,9.71 9.17,7.76V7.76L12.71,4.22C14.66,2.27 17.83,2.27 19.78,4.22C21.73,6.17 21.73,9.34 19.78,11.29L18.29,12.78C18.3,11.96 18.17,11.14 17.89,10.36L18.36,9.88C19.54,8.71 19.54,6.81 18.36,5.64C17.19,4.46 15.29,4.46 14.12,5.64L10.59,9.17C9.41,10.34 9.41,12.24 10.59,13.41M13.41,9.17C13.8,8.78 14.44,8.78 14.83,9.17C16.78,11.12 16.78,14.29 14.83,16.24V16.24L11.29,19.78C9.34,21.73 6.17,21.73 4.22,19.78C2.27,17.83 2.27,14.66 4.22,12.71L5.71,11.22C5.7,12.04 5.83,12.86 6.11,13.65L5.64,14.12C4.46,15.29 4.46,17.19 5.64,18.36C6.81,19.54 8.71,19.54 9.88,18.36L13.41,14.83C14.59,13.66 14.59,11.76 13.41,10.59C13,10.2 13,9.56 13.41,9.17Z" /> </svg> Home</li>
+
+            <li>Posts</li>
+
+            <li>Pages</li>
+
+            <li>About</li>
+
+        </ul>
+
+    </div>
+
+<div id="header">
+
+    <i id="menu" class="far fa-minus-square"></i>
+
+    <span id="blogname"></span>
+
+    <i id="code" class="fas fa-code"></i>
+
+</div>
+
+        <div id="main">
+
+        <h1 id="headline">My Blog on Github!</h1>
+
+        
+
+        <p> Go through my Showcase and explore them!<a href="https://abhiprojectz.github.io/Github-Blog-CMS/">Star on github</a></p>
+
+        
+
+            <ul id="cards">
+
+                
+
+            </ul>
+
+            <h3 class="made_by">Made By <a href="https://github.com/abhiprojectz">Abhiprojectz</a> || abhi 2020</h3>
+
+        </div>
+
+        
+
+        <div id="blog"></div>
+
+        
+
+        
+
+        
+
+    </body>
+
+    
+
+    <script>
+
+        function loader() {
+
+    $("#loader").hide();
+
+    $("#super").show();
+
+}
+
+setTimeout(loader , 1000);
+
+        
+
+    </script>
+
+    <script>
+
+    
+
+    
+
+        
+
+    var data = initialize();
+
+    
+
+   
+
+        var username = data.name ;
+
+        var repo = data.repo;
+
+        var pages = data.pages;
+
+        var folder = data.folder;
+
+        var blogname = data.blogname;
+
+        var headline = data.headline;
+
+        var about = data.about;
+
+        
+
+        settingup();
+
+        
+
+        function settingup() {
+
+            
+
+            $("#blogname").text(blogname);
+
+            $("#headline").text(headline);
+
+        }
+
+        
+
+    
+
+    
+
+    var url = "https://api.github.com/repos/" + username +"/" + repo + "/contents/" + folder ;
+
+    
+
+    
+
+        
+
+        
+
+        
+
+        fetch(url).then(function(response) {
+
+  if(response.ok) {
+
+    response.json().then(function(response) {
+
+        
+
+        main(response);
+
+    
+
+    });
+
+  } else {
+
+    console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
+
+  }
+
+});
+
+function main(response) {
+
+var data = response ;
+
+   
+
+   
+
+for(let i in data) {
+
+            
+
+            var name = `${data[i].name}`;
+
+            
+
+            var size =` ${data[i].size}`;
+
+            
+
+            
+
+            
+
+            setup(name,size);
+
+        }
+
+}
+
+function setup(name,size) {
+
+    
+
+    var random = Math.floor((Math.random() * 100) + 1);
+
+    
+
+    var title = name.slice(0,-3);
+
+    
+
+    document.getElementById("cards").innerHTML += '<li class="cards_item"><div class="card"><div class="card_image"><img src="https://picsum.photos/500/300/?image='+random+ '"></div><div class="card_content"><h2 class="card_title">'+ title +'</h2><p class="card_text">'+ "Size:  " + size+'</p><button id="'+name+'" onclick="handler(this.id);" class="btn card_btn">View Post</button></div></div></li>';
+
+    
+
+    
+
+    
+
+}
+
+function handler(data) {
+
+var link =data;
+
+    
+
+    
+
+    fetchblog(link);
+
+}
+
+function fetchblog(link) {
+
+    
+
+    
+
+    var uurl = "https://raw.githubusercontent.com/" + username +"/" + repo + "/master/posts/" + link;
+
+    
+
+    
+
+    
+
+    fetch(uurl).then(function(response) {
+
+  if(response.ok) {
+
+    response.text().then(function(data) {
+
+        
+
+        
+
+        blog(data,link);
+
+    
+
+    });
+
+  } else {
+
+    console.log('Network request failed with response ' + response.status + ': ' + response.statusText);
+
+  }
+
+});
+
+    
+
+}
+
+function convert(data){
+
+    return marked(data);
+
+    }
+
+function blog (data,link) {
+
+    
+
+    $("#main").hide();
+
+    
+
+    
+
+   
+
+   
+
+ var markup =  data;
+
+ 
+
+ var content = convert(markup);
+
+ 
+
+ var title = link.slice(0,-3);
+
+ 
+
+document.getElementById("blog").innerHTML = '<div id="card"><div id="card_content"><h2 class="card_title">'+title+'</h2><div class="markdown-body">'+content+'</div><button  onclick="back();" class="btn card_btn">Back</button></div></div>';
+
+    
+
+    $("#blog").show()
+
+}
+
+function back() {
+
+    
+
+    $("#main").show();
+
+    
+
+    $("#blog").hide();
+
+    
+
+}
+
+$("#code").click(function(){
+
+    
+
+    swal(about);
+
+    
+
+})
+
+    
+
+    </script>
+
+    <script>
+
+        
+
+        $("#menu").click(function() {
+
+            $("#menuu").show();
+
+            $("#menuu").addClass("left");
+
+            
+
+        })
+
+        
+
+        $("#bback").click(function () {
+
+            
+
+            
+
+        $("#menuu").hide();
+
+            
+
+        })
+
+    </script>
+
+</html>
